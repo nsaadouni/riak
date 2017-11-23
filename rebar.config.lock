@@ -132,7 +132,7 @@
                    "f6ed834cd8799623ec00faaedc9ef2a55876d5d8"}},
        {riak_kv,".*",
                 {git,"git://github.com/martincox/riak_kv.git",
-                     "2d33ad3f41ba33f790cf9d269e49a58503dea207"}},
+                     "20cd677d486130bcf7931f8cc496cd1096f6b107"}},
        {merge_index,".*",
                     {git,"git://github.com/basho/merge_index.git",
                          "c5efac6d3ccf6ee976978e21697016bfbec2265c"}},
