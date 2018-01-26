@@ -448,6 +448,52 @@ case "$1" in
 
         NODETOOL rpc riak_repl_console show_local_cluster_id
         ;;
+
+    bucket)
+        ACTION=$1
+        shift
+
+        if [ $# -lt 1 -o $# -gt 3 ]; then
+            echo "Usage: $SCRIPT $ACTION reset |"
+            echo "                       add <cluster> <bucket> |"
+            echo "                       remove <cluster> <bucket>"
+            exit 1
+        fi
+
+        # Make sure the local node is running
+        node_up_check
+
+        SUB_CMD=$1
+        shift
+
+        case "${SUB_CMD}" in
+            add)
+                CLUSTER=$1
+                BUCKET=$2
+                NODETOOL rpc riak_repl_console add_filtered_bucket ${CLUSTER} ${BUCKET}
+                ;;
+            remove)
+                CLUSTER=$1
+                BUCKET=$2
+                NODETOOL rpc riak_repl_console remove_filtered_bucket ${CLUSTER} ${BUCKET}
+                ;;
+            reset)
+                NODETOOL rpc riak_repl_console reset_filtered_buckets
+                ;;
+            enable)
+                NODETOOL rpc riak_repl_console enable_bucket_filtering
+                ;;
+            disable)
+                NODETOOL rpc riak_repl_console disable_bucket_filtering
+                ;;
+            *)
+                echo "Usage: $SCRIPT $ACTION reset |"
+                echo "                       add <cluster> <bucket> |"
+                echo "                       remove <cluster> <bucket>"
+                exit 1
+                ;;
+        esac
+        ;;
     *)
 
 
