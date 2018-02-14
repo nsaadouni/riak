@@ -486,6 +486,9 @@ case "$1" in
             disable)
                 NODETOOL rpc riak_repl_console disable_bucket_filtering
                 ;;
+            config)
+                NODETOOL rpc riak_repl_console print_bucket_filtering_config
+                ;;
             *)
                 echo "Usage: $SCRIPT $ACTION reset |"
                 echo "                       add <cluster> <bucket> |"
@@ -587,6 +590,33 @@ Version 3 MDC replication:
 
              display this cluster's cluster-id tuple, for use with the *-block-provider-redirect
              commands
+
+      bucket add <cluster name> <bucket name>
+
+             Add a bucket to the list of buckets to be replicated for the given cluster
+
+             e.g
+             bucket add Cluster1 test
+
+             Adds a bucket 'test' which will be replicated to Cluster1 in both realtime and fullsync
+
+      bucket remove <cluster name> <bucket name>
+
+             Remove a bucket from the list of filtered buckets for the given cluster. Once removed the bucket will
+             no longer be replicated to that cluster
+
+      bucket reset
+
+             Reset the filtered bucket config - will mean no buckets will be replicated if bucket filtering is currently
+             enabled
+
+      bucket enable
+
+             Enable bucket filtering for the current cluster
+
+      bucket disable
+
+             Disable bucket filtering for the current cluster
 
    Performance Tuning:
 
