@@ -487,8 +487,12 @@ case "$1" in
                 ;;
             *)
                 echo "Usage: $SCRIPT $ACTION reset |"
-                echo "                       add <cluster> <bucket> |"
-                echo "                       remove <cluster> <bucket>"
+                echo "                       add <cluster> <bucket>    |"
+                echo "                       remove <cluster> <bucket> |"
+                echo "                       reset                     |"
+                echo "                       enable                    |"
+                echo "                       disable                   |"
+                echo "                       config"
                 exit 1
                 ;;
         esac
