@@ -454,12 +454,11 @@ case "$1" in
         shift
 
         if [ $# -lt 1 -o $# -gt 3 ]; then
-            echo "Usage: $SCRIPT $ACTION reset                     |"
-            echo "                       add <bucket> <cluster>    |"
+            echo "Usage: $SCRIPT $ACTION reset |"
+            echo "                       add <bucket> <cluster> |"
             echo "                       remove <bucket> <cluster> |"
-            echo "                       reset                     |"
-            echo "                       enable                    |"
-            echo "                       disable                   |"
+            echo "                       enable |"
+            echo "                       disable |"
             echo "                       config"
             exit 1
         fi
@@ -515,11 +514,10 @@ case "$1" in
                 ;;
             *)
                 echo "Usage: $SCRIPT $ACTION reset |"
-                echo "                       add <bucket> <cluster>    |"
+                echo "                       add <bucket> <cluster> |"
                 echo "                       remove <bucket> <cluster> |"
-                echo "                       reset                     |"
-                echo "                       enable                    |"
-                echo "                       disable                   |"
+                echo "                       enable |"
+                echo "                       disable |"
                 echo "                       config"
                 exit 1
                 ;;
