@@ -454,9 +454,13 @@ case "$1" in
         shift
 
         if [ $# -lt 1 -o $# -gt 3 ]; then
-            echo "Usage: $SCRIPT $ACTION reset |"
-            echo "                       add <cluster> <bucket> |"
-            echo "                       remove <cluster> <bucket>"
+            echo "Usage: $SCRIPT $ACTION reset                     |"
+            echo "                       add <bucket> <cluster>    |"
+            echo "                       remove <bucket> <cluster> |"
+            echo "                       reset                     |"
+            echo "                       enable                    |"
+            echo "                       disable                   |"
+            echo "                       config"
             exit 1
         fi
 
@@ -468,27 +472,51 @@ case "$1" in
 
         case "${SUB_CMD}" in
             add)
+                if [ $# -ne 2 ]; then
+                  echo "Usage: $SCRIPT $ACTION add <bucket> <cluster>"
+                  exit 1
+                fi
                 NODETOOL rpc riak_repl_console add_filtered_bucket $1 $2
                 ;;
             remove)
+                if [ $# -ne 2 ]; then
+                  echo "Usage: $SCRIPT $ACTION remove <bucket> <cluster>"
+                  exit 1
+                fi
                 NODETOOL rpc riak_repl_console remove_filtered_bucket $1 $2
                 ;;
             reset)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION reset"
+                  exit 1
+                fi
                 NODETOOL rpc riak_repl_console reset_filtered_buckets
                 ;;
             enable)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION enable"
+                  exit 1
+                fi
                 NODETOOL rpc riak_repl_console enable_bucket_filtering
                 ;;
             disable)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION disable"
+                  exit 1
+                fi
                 NODETOOL rpc riak_repl_console disable_bucket_filtering
                 ;;
             config)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION config"
+                  exit 1
+                fi
                 NODETOOL rpc riak_repl_console print_bucket_filtering_config
                 ;;
             *)
                 echo "Usage: $SCRIPT $ACTION reset |"
-                echo "                       add <cluster> <bucket>    |"
-                echo "                       remove <cluster> <bucket> |"
+                echo "                       add <bucket> <cluster>    |"
+                echo "                       remove <bucket> <cluster> |"
                 echo "                       reset                     |"
                 echo "                       enable                    |"
                 echo "                       disable                   |"
@@ -591,7 +619,7 @@ Version 3 MDC replication:
              display this cluster's cluster-id tuple, for use with the *-block-provider-redirect
              commands
 
-      bucket add <cluster name> <bucket name>
+      bucket add <bucket name> <cluster name>
 
              Add a bucket to the list of buckets to be replicated for the given cluster
 
@@ -600,7 +628,7 @@ Version 3 MDC replication:
 
              Adds a bucket 'test' which will be replicated to Cluster1 in both realtime and fullsync
 
-      bucket remove <cluster name> <bucket name>
+      bucket remove <bucket name> <cluster name>
 
              Remove a bucket from the list of filtered buckets for the given cluster. Once removed the bucket will
              no longer be replicated to that cluster
