@@ -139,21 +139,6 @@
        {riak_control,".*",
                      {git,"git://github.com/basho/riak_control.git",
                           "cbf605a9eb476b8539c87e2f5c36f9d76c352b4a"}},
-<<<<<<< HEAD
-=======
-       {ranch,".*",
-              {git,"https://github.com/basho/ranch.git",
-                   "3f70e09efe992bbe1989d40812eded936cd2a0e1"}},
-       {ebloom,".*",
-               {git,"https://github.com/basho/ebloom.git",
-                    "0b615927ecc04b3de0e4e35389431aed64498acb"}},
-       {riak_repl_pb_api,".*",
-                         {git,"git@github.com:basho/riak_repl_pb_api.git",
-                              "750c1aadc1b43bb510715a1302bb70c654289616"}},
-       {riak_repl,".*",
-                  {git,"https://github.com/nickkeers/riak_repl.git",
-                       "122098a42a5d4256fd5ecbaeb23b5bc4e7ae184e"}},
->>>>>>> Update lockfile
        {riaknostic,".*",
                    {git,"git://github.com/basho/riaknostic.git",
                         "dad8939d0ef32fbf435d13697720223293195282"}},
