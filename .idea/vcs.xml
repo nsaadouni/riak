@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/basho_stats" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/bear" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/bitcask" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/canola" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/clique" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/cluster_info" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/cuttlefish" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/ebloom" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/edown" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/eleveldb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/eper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/erlang_js" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/erlydtl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/eunit_formatters" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/exometer_core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/folsom" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/fuse" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/getopt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/goldrush" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/hamcrest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/hyper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/ibrowse" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/kvc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/lager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/lager_syslog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/meck" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/merge_index" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/mochiweb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/neotoma" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/node_package" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/parse_trans" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/pbkdf2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/poolboy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/proper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/protobuffs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/ranch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/rebar_lock_deps_plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_auth_mods" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_control" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_dt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_ensemble" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_kv" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_pb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_pipe" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_repl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_repl_pb_api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_search" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riak_sysmon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riakc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/riaknostic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/setup" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/sext" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/sidejob" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/stdlib2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/syslog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/webmachine" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/yokozuna" vcs="Git" />
   </component>
 </project>
