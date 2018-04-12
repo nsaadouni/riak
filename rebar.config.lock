@@ -174,7 +174,7 @@
                               "8b729ac46c059c3a3451090dd8fa3c0e67509010"}},
        {riak_repl,".*",
                   {git,"git://github.com/nsaadouni/riak_repl.git",
-                       "d983ca7e1e98ed4d8174fa7a18e27a8c89d28b1e"}},
+                       "a67632a92773e649dadc4b54066e2f6c7e9cef96"}},
        {rebar_lock_deps_plugin,".*",
                                {git,"https://github.com/basho/rebar_lock_deps_plugin.git",
                                     "8816f45ff38cd04d5c7741bd39166af58116dd44"}}]}.
