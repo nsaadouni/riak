@@ -173,8 +173,8 @@
                          {git,"git@github.com:basho/riak_repl_pb_api.git",
                               "8b729ac46c059c3a3451090dd8fa3c0e67509010"}},
        {riak_repl,".*",
-                  {git,"git://github.com/nickkeers/riak_repl.git",
-                       "cc4b00363a9dbae8c3d6e1fdf7c7c40e4defca5a"}},
+                  {git,"git://github.com/nsaadouni/riak_repl.git",
+                       "4dc458830f150f847b44bc7c35ccf93fd8fdbe88"}},
        {rebar_lock_deps_plugin,".*",
                                {git,"https://github.com/basho/rebar_lock_deps_plugin.git",
                                     "8816f45ff38cd04d5c7741bd39166af58116dd44"}}]}.
