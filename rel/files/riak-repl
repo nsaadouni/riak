@@ -194,6 +194,19 @@ case "$1" in
 
         NODETOOL rpc riak_repl_console $ACTION
         ;;
+    data-conns)
+        ACTION=$1
+        shift
+        if [ $# -gt 0 ]; then
+            echo "Usage: $SCRIPT $ACTION"
+            exit 1
+        fi
+
+        # Make sure the local node is running
+        node_up_check
+
+        NODETOOL rpc riak_repl_console datamgr_stats
+        ;;
     connect|disconnect)
         ACTION=$1
         CMD=`echo $ACTION | sed 's/-/_/'`
