@@ -194,6 +194,19 @@ case "$1" in
 
         NODETOOL rpc riak_repl_console $ACTION
         ;;
+    data-conns)
+        ACTION=$1
+        shift
+        if [ $# -gt 0 ]; then
+            echo "Usage: $SCRIPT $ACTION"
+            exit 1
+        fi
+
+        # Make sure the local node is running
+        node_up_check
+
+        NODETOOL rpc riak_repl_console datamgr_stats
+        ;;
     connect|disconnect)
         ACTION=$1
         CMD=`echo $ACTION | sed 's/-/_/'`
@@ -448,6 +461,81 @@ case "$1" in
 
         NODETOOL rpc riak_repl_console show_local_cluster_id
         ;;
+
+    bucket)
+        ACTION=$1
+        shift
+
+        if [ $# -lt 1 -o $# -gt 3 ]; then
+            echo "Usage: $SCRIPT $ACTION reset |"
+            echo "                       add <bucket> <cluster> |"
+            echo "                       remove <bucket> <cluster> |"
+            echo "                       enable |"
+            echo "                       disable |"
+            echo "                       config"
+            exit 1
+        fi
+
+        # Make sure the local node is running
+        node_up_check
+
+        SUB_CMD=$1
+        shift
+
+        case "${SUB_CMD}" in
+            add)
+                if [ $# -ne 2 ]; then
+                  echo "Usage: $SCRIPT $ACTION add <bucket> <cluster>"
+                  exit 1
+                fi
+                NODETOOL rpc riak_repl_console add_filtered_bucket $1 $2
+                ;;
+            remove)
+                if [ $# -ne 2 ]; then
+                  echo "Usage: $SCRIPT $ACTION remove <bucket> <cluster>"
+                  exit 1
+                fi
+                NODETOOL rpc riak_repl_console remove_filtered_bucket $1 $2
+                ;;
+            reset)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION reset"
+                  exit 1
+                fi
+                NODETOOL rpc riak_repl_console reset_filtered_buckets
+                ;;
+            enable)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION enable"
+                  exit 1
+                fi
+                NODETOOL rpc riak_repl_console enable_bucket_filtering
+                ;;
+            disable)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION disable"
+                  exit 1
+                fi
+                NODETOOL rpc riak_repl_console disable_bucket_filtering
+                ;;
+            config)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION config"
+                  exit 1
+                fi
+                NODETOOL rpc riak_repl_console print_bucket_filtering_config
+                ;;
+            *)
+                echo "Usage: $SCRIPT $ACTION reset |"
+                echo "                       add <bucket> <cluster> |"
+                echo "                       remove <bucket> <cluster> |"
+                echo "                       enable |"
+                echo "                       disable |"
+                echo "                       config"
+                exit 1
+                ;;
+        esac
+        ;;
     *)
 
 
@@ -541,6 +629,33 @@ Version 3 MDC replication:
 
              display this cluster's cluster-id tuple, for use with the *-block-provider-redirect
              commands
+
+      bucket add <bucket name> <cluster name>
+
+             Add a bucket to the list of buckets to be replicated for the given cluster
+
+             e.g
+             bucket add Cluster1 test
+
+             Adds a bucket 'test' which will be replicated to Cluster1 in both realtime and fullsync
+
+      bucket remove <bucket name> <cluster name>
+
+             Remove a bucket from the list of filtered buckets for the given cluster. Once removed the bucket will
+             no longer be replicated to that cluster
+
+      bucket reset
+
+             Reset the filtered bucket config - will mean no buckets will be replicated if bucket filtering is currently
+             enabled
+
+      bucket enable
+
+             Enable bucket filtering for the current cluster
+
+      bucket disable
+
+             Disable bucket filtering for the current cluster
 
    Performance Tuning:
 
