@@ -6,5 +6,5 @@ perfdev/
 ebin/
 apps/riak/.eunit
 apps/riak/.rebar
-.idea/
+.idea
 *.iml
