@@ -45,7 +45,7 @@
                         "4f436ba2b67a7a95ed1d4ddd74a44a06661a77d1"}},
        {bitcask,".*",
                 {git,"git://github.com/martincox/bitcask.git",
-                     "6daf117b77b6a34afdf8b555f2d003db899373e5"}},
+                     "3c2fcdcfc9e88d848070d6cc66e979024ad5cdeb"}},
        {eper,".*",
              {git,"git://github.com/basho/eper.git",
                   "7222ecaebceb5422e74a9c1503043bbc6036f6b7"}},
