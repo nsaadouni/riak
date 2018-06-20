@@ -132,7 +132,7 @@
                    "fdb62672000be1477e2c8b6d02289abe411baf91"}},
        {riak_kv,".*",
                 {git,"git://github.com/martincox/riak_kv.git",
-                     "a57b3c908c9de2bc714b4769d5da65d397a4c2eb"}},
+                     "0e5c3042d77fb191d368130ebd768ffa1c584b69"}},
        {erlydtl,".*",
                 {git,"git://github.com/erlydtl/erlydtl.git",
                      "d20b53f04837a1053ed18987f645cb60eae82453"}},
