@@ -93,7 +93,7 @@
                     "baed0a08165d08e7c6e363996e1fc3e5bef8e0cf"}},
        {riak_core,".*",
                   {git,"git://github.com/martincox/riak_core.git",
-                       "4ef73969a5bff1c57b9b7e8863ad3134c8b67c88"}},
+                       "03be18e7055f634905c6ccf1b53def573f0df21f"}},
        {riak_pipe,".*",
                   {git,"git://github.com/martincox/riak_pipe.git",
                        "399f8292972212766d81b103608fbd2fc32c9e56"}},
