@@ -1,0 +1,22 @@
+ListKeysFun = fun() ->
+{ok, C} = riak:local_client(), 
+[C:list_keys(Bucket) || Bucket <- [<<"bucket-1">>, <<"bucket-2">>, <<"bucket-3">>]]
+end.
+
+InsertObjectsFun = fun() ->
+{ok, C} = riak:local_client(),
+C:put(riak_object:new(<<"bucket-1">>, <<"key-1-c2">>, <<"value-1-c2">>)),
+C:put(riak_object:new(<<"bucket-1">>, <<"key-2-c2">>, <<"value-2-c2">>)),
+C:put(riak_object:new(<<"bucket-2">>, <<"key-1-c3">>, <<"value-1-c3">>)),
+C:put(riak_object:new(<<"bucket-2">>, <<"key-2-c3">>, <<"value-2-c3">>)),
+
+USDict = dict:from_list([{country_of_origin, 'us'}]),
+UKDict = dict:from_list([{country_of_origin, 'uk'}]),
+
+C:put(riak_object:new(<<"bucket-3">>, <<"key-1-c2">>, <<"value-1-c2">>, UKDict)),
+C:put(riak_object:new(<<"bucket-3">>, <<"key-2-c2">>, <<"value-2-c2">>, UKDict)),
+C:put(riak_object:new(<<"bucket-3">>, <<"key-1-c3">>, <<"value-1-c3">>, USDict)),
+C:put(riak_object:new(<<"bucket-3">>, <<"key-2-c3">>, <<"value-2-c3">>, USDict))
+end.
+
+ListKeysFun().
