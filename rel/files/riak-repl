@@ -270,6 +270,13 @@ case "$1" in
                 fi
                 NODETOOL rpc riak_repl_console object_filtering_disable
                 ;;
+            clear-config)
+                if [ $# -ne 0 ]; then
+                  echo "Usage: $SCRIPT $ACTION clear-config"
+                  exit 1
+                fi
+                NODETOOL rpc riak_repl_console object_filtering_clear_config
+                ;;                
             load-config)
                 if [ $# -ne 1 ]; then
                   echo "Usage: $SCRIPT $ACTION load-config '/PATH/TO/CONFIG/FILE'"
@@ -294,6 +301,7 @@ case "$1" in
             *)
                 echo "Usage: $SCRIPT $ACTION enable |"
                 echo "                       disable  |"
+                echo "                       clear-config  |"                
                 echo "                       load-config '/PATH/TO/CONFIG/FILE'"
                 echo "                       check-config '/PATH/TO/CONFIG/FILE' |"
                 echo "                       print-config"
